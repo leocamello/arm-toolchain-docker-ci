@@ -1,11 +1,12 @@
 FROM alpine:latest
 
 ADD . /home/project
+WORKDIR /home/project
 
 # WORKDIR /home/opt
 
 RUN apk update && \
-    apk add --no-cache gcc libc-dev make && \
+    apk add --no-cache gcc libc-dev make
 
 # RUN apk update && \
 #     apk add --no-cache make && \
@@ -18,6 +19,6 @@ RUN apk update && \
 
 # ENV PATH="/home/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:${PATH}"
 
-WORKDIR /home/project
+#WORKDIR /home/project
 
 CMD [""]
