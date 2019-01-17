@@ -8,4 +8,6 @@ compiler: gcc
 
 before_script: docker build -t develop .
 
-script: docker run --rm develop make build
+script:
+  - docker run --rm develop ls
+  - docker run --rm develop make build
