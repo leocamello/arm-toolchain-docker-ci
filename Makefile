@@ -1,4 +1,4 @@
-CC = gcc
+CC = arm-none-eabi-gcc
 
 default: build
 
