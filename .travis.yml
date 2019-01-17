@@ -1,11 +1,11 @@
+sudo: required
+
+services: docker
+
 language: c
 
-before_script: 
-  - docker build -t develop .
+compiler: gcc
 
-script: 
-  - docker run --rm develop env
-  - docker run --rm develop ls -l /home/opt/gcc-arm-none-eabi-8-2018-q4-major/bin/
-  - docker run --rm develop /home/opt/gcc-arm-none-eabi-8-2018-q4-major/bin/arm-none-eabi-gcc --version
-  - docker run --rm develop make build
-  - docker run --rm develop make test
+before_script: docker build -t develop .
+
+script: docker run --rm develop make build
