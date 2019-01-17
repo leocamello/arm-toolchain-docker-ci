@@ -1,11 +1,8 @@
-sudo: required
-
-services: docker
-
 language: c
-
 compiler: gcc
 
-before_script: docker build -t develop .
+before_script: 
+  - docker build -t develop .
 
-script: docker run --rm develop make build
+script: 
+  - docker run --rm develop make build
